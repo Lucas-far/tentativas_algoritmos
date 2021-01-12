@@ -1,8 +1,8 @@
 
 
 from methods_database import (
-    colors, calculate_lifetime, customize_birthday, find_sign, get_input_integer, instructions, should_algorithm_run,
-    welcome
+    colors, calculate_lifetime, customize_birthday, customize_birthday_str,  find_sign, get_input_integer, instructions,
+    should_algorithm_run, welcome
 )
 
 from widgets import (
@@ -23,10 +23,6 @@ input_exec: str = ''
 input_birth_day: int = 1
 input_birth_month: int = 1
 input_birth_year: int = 1
-
-user_birthday = None
-user_birthday_str: str = ''
-user_lifetime: str = ''
 
 def start():
     """"""
@@ -93,17 +89,22 @@ while True:
         the_last_integer=9_999
     )
 
-    user_birthday, user_birthday_str = customize_birthday(
-        the_birthday=user_birthday,
-        the_birthday_srt=user_birthday_str,
+    user_birthday = customize_birthday(
+        year=input_birth_year,
+        month=input_birth_month,
+        day=input_birth_day
+    )
+
+    user_birthday_str = customize_birthday_str(
         year=input_birth_year,
         month=input_birth_month,
         day=input_birth_day
     )
 
     user_lifetime = calculate_lifetime(
-        birthday=user_birthday,
-        the_result=user_lifetime,
+        year=input_birth_year,
+        month=input_birth_month,
+        day=input_birth_day
     )
 
     the_report = find_sign(
@@ -115,11 +116,6 @@ while True:
 
     print(the_report)
 
-    input_exec: str = ''
     input_birth_day: int = 1
     input_birth_month: int = 1
     input_birth_year: int = 1
-
-    user_birthday = None
-    user_birthday_str: str = ''
-    user_lifetime: str = ''

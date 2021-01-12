@@ -4,7 +4,7 @@
 colors: tuple = (
     '\033[1:30m', '\033[1:31m', '\033[1:32m', '\033[1:33m', '\033[1:34m', '\033[1:35m', '\033[1:36m', '\033[m')
 
-def calculate_lifetime(birthday, the_result):
+def calculate_lifetime(year, month, day):
     """
     To calculate user's lifetime.
     """
@@ -12,7 +12,9 @@ def calculate_lifetime(birthday, the_result):
     from datetime import datetime
 
     today = datetime.today()
-    the_existence_calculus = today - birthday
+
+    the_birthday = datetime(year=year, month=month, day=day)
+    the_existence_calculus = today - the_birthday
     the_result = f'About {str(the_existence_calculus).split()[0]} days'
 
     "Example"  # the_existence_calculus = 2020/07/08 - 1992/7/16 = 10219 days, 23:33:12.115426
@@ -20,16 +22,19 @@ def calculate_lifetime(birthday, the_result):
 
     return the_result
 
-def customize_birthday(the_birthday, the_birthday_srt: str = '', year: int = 1, month: int = 1, day: int = 1):
+def customize_birthday(year: int = 1, month: int = 1, day: int = 1, the_result=None):
     """
     To build a datetime variable from a birthday.
     """
+
     from datetime import datetime
-
     the_birthday = datetime(year=year, month=month, day=day)
-    the_birthday_srt = f'{year}/{month}/{day}'
+    return the_birthday
 
-    return the_birthday, the_birthday_srt
+def customize_birthday_str(year: int = 1, month: int = 1, day: int = 1, the_result=None):
+    """"""
+    the_result = f'{year}/{month}/{day}'
+    return the_result
 
 def find_sign(birthday, existence, existing_signs=12, day=1, month=1):
     """To custom conditions for each sign and print the result of the only possibility."""
@@ -123,3 +128,8 @@ def should_algorithm_run():
 
 def welcome(algorithm_name: str):
     print(f'\nWelcome to the {colors[4]}{algorithm_name}{colors[7]}')
+
+if __name__ == '__main__':
+    # print(calculate_lifetime(1992, 7, 16))
+    # print(customize_birthday(1992, 7, 16))
+    print(customize_birthday_str(1992, 7, 16))
