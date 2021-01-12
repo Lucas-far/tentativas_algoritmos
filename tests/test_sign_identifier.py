@@ -18,7 +18,6 @@ def calculate_lifetime(year, month, day):
     today = datetime.today()
 
     the_birthday = datetime(year=year, month=month, day=day)
-    the_birthday_srt = f'{year}/{month}/{day}'
     the_existence_calculus = today - the_birthday
     the_result = f'About {str(the_existence_calculus).split()[0]} days'
 
