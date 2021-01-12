@@ -1,28 +1,29 @@
 
 
 from methods_database import (
-    colors, calculate_lifetime, customize_birthday, customize_birthday_str,  find_sign, get_input_integer, instructions,
-    should_algorithm_run, welcome
+    calculate_lifetime, customize_birthday, customize_birthday_str,  find_sign, get_input_integer,
+    input_printer, instructions, should_algorithm_run, welcome, step_painter
 )
 
 from widgets import (
-    click_arrow, hit_enter, the_breaking_point, the_closure
+    click_arrow, colors, hit_enter, the_breaking_point, the_closure
 )
-
-steps: tuple = ('',
-                '1 - Should algorithm run?',
-                '2 - Display of instructions',
-                '3 - Provide input: birth day',
-                '4 - Provide input: birth month',
-                '5 - Provide input: birth year',
-                '6 - Display of result')
-
-steps: tuple = tuple([f'\n{colors[2]}{step}{colors[7]}\n' for step in steps])
 
 input_exec: str = ''
 input_birth_day: int = 1
 input_birth_month: int = 1
 input_birth_year: int = 1
+
+steps = step_painter(
+        '',
+        '1 - Should algorithm run?',
+        '2 - Display of instructions',
+        '3 - Provide input: birth day',
+        '4 - Provide input: birth month',
+        '5 - Provide input: birth year',
+        prefix=3,
+        prefix2=7
+    )
 
 def start():
     """"""
@@ -32,15 +33,15 @@ def start():
 
 while True:
 
-    welcome('Sign Identifier')
+    print(greetings := welcome('Sign Identifier'))
     start()
 
     if input_exec in the_breaking_point:
         print(the_closure)
         break
 
-    instructions(
-        the_content=f"""
+    print(the_instructions := instructions(
+        content=f"""
         {steps[2]}
         ========== INSTRUCTIONS ==========
         1 - Provide your {colors[1]}birth day{colors[7]}
@@ -48,7 +49,9 @@ while True:
         3 - Provide your {colors[1]}birth year{colors[7]}
         4 - The algorithm will return user's sign and lifetime existence
         """
-    )
+    ))
+
+    input_printer()
 
     input_birth_day = get_input_integer(
         the_input=input_birth_day,
@@ -107,14 +110,12 @@ while True:
         day=input_birth_day
     )
 
-    the_report = find_sign(
+    print(the_report := find_sign(
         birthday=user_birthday_str,
         existence=user_lifetime,
         day=input_birth_day,
         month=input_birth_month
-    )
-
-    print(the_report)
+    ))
 
     input_birth_day: int = 1
     input_birth_month: int = 1
