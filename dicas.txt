@@ -1,0 +1,3 @@
+
+
+1 - Criar uma variável e imprimí-la logo após, para saber o que está acontecendo
