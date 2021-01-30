@@ -1,3 +1,24 @@
 
 
 1 - Criar uma variável e imprimí-la logo após, para saber o que está acontecendo
+
+---> Uso fora do escopo do while True =====
+# single use input to determine the start of the algorithm
+input_exec: str = ''
+
+---> Uso fora do escopo do while True, onde esse método é criado, não importado, mas nele, há um método importado
+from methods_database import should_algorithm_run
+def start():
+    """"""
+    global input_exec
+    print(steps[1])
+    input_exec = input(should_algorithm_run())
+
+---> Uso dentro do escopo do while True
+from widgets import the_breaking_point, the_closure
+
+    while True:
+        start()
+        if input_exec in the_breaking_point:
+            print(the_closure)
+            break

@@ -62,8 +62,8 @@ while True:
         2 - Type the day you have been born (from 1 to 31)
         3 - {hit_enter}
         -------> """,
-        the_initial_integer=1,
-        the_last_integer=31
+        initial_target=1,
+        ending_target=31
     )
 
     input_birth_month = get_input_integer(
@@ -75,8 +75,8 @@ while True:
         2 - Type the month you have been born (from 1 to 12)
         3 - {hit_enter}
         -------> """,
-        the_initial_integer=1,
-        the_last_integer=12
+        initial_target=1,
+        ending_target=12
     )
 
     input_birth_year = get_input_integer(
@@ -88,8 +88,8 @@ while True:
         2. Type the year you have been born (from year 1 to 9999)
         3 - {hit_enter}
         -------> """,
-        the_initial_integer=1,
-        the_last_integer=9_999
+        initial_target=1,
+        ending_target=9_999
     )
 
     user_birthday = customize_birthday(

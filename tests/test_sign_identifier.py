@@ -1,12 +1,13 @@
 
 
 from unittest import TestCase
+
 from methods_database import (
     calculate_lifetime, customize_birthday, customize_birthday_str, find_sign, get_input_integer, instructions,
     input_printer, should_algorithm_run, step_painter, welcome
 )
 
-"Run all tests in the package at once"  # python -m unittest discover tests
+"Run all tests at once"  # python -m unittest discover tests
 
 class TestCalculateLifetime(TestCase):
 

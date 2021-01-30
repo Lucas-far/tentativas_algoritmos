@@ -2,6 +2,7 @@
 
 """"""
 from datetime import datetime
+from random import choice, randint
 
 def calculate_lifetime(year: int = 1, month: int = 1, day: int = 1) -> str:
     """
@@ -103,28 +104,28 @@ def find_sign(birthday: str = 'Absent', existence: str = 'Absent', existing_sign
             counter += 1
     counter = 0
 
-def get_input_integer(the_input: int, input_text: str = 'Write an integer -> ', the_initial_integer: int = 1, the_last_integer: int = 9999) -> int:
+def get_input_integer(the_input: int, input_text: str = 'Write an integer -> ', initial_target: int = 1, ending_target: int = 9999) -> int:
     """
     To treat improper data while a proper integer number is not being provided.
     :param the_input:
     :param input_text:
-    :param the_initial_integer:
-    :param the_last_integer:
+    :param initial_target:
+    :param ending_target:
     :return: int
     """
 
     integer_out_of_range = f"""
         \033[1:31m========== ERROR ==========\033[m
-        The provided input is not in the suitable range: {the_initial_integer} to {the_last_integer}"""
+        The provided input is not in the suitable range: {initial_target} to {ending_target}"""
 
     integer_unused = f"""
         \033[1:31m========== ERROR ==========\033[m
-        The provided input must be an integer number: {the_initial_integer} to {the_last_integer}"""
+        The provided input must be an integer number: {initial_target} to {ending_target}"""
 
-    while the_input <= the_initial_integer or the_input > the_last_integer:
+    while the_input <= initial_target or the_input > ending_target:
         try:
             the_input = int(input(input_text))
-            if the_input in range(the_initial_integer, the_last_integer + 1):
+            if the_input in range(initial_target, ending_target + 1):
                 break
             else:
                 print(integer_out_of_range)
@@ -139,10 +140,7 @@ def instructions(content: str) -> str:
     :param content:
     :return: str
     """
-    the_instructions = f"""
-    {content}
-    """
-    return the_instructions
+    return content
 
 def input_printer(message: str = 'Press any key in order to continue...') -> input:
     """
@@ -197,6 +195,104 @@ def welcome(algorithm_name: str = 'Name of the algorithm', prefix: int = 0, pref
     )
 
     return f'\nWelcome to the {pallet[prefix]}{algorithm_name}{pallet[prefix2]}'
+
+
+
+def number_maker_by_difficulty(the_difficulty: int = 1, alternative=True, alternative2=True):
+    """"""
+
+    if the_difficulty == 1:
+        easy = randint(1, 9)
+        easy2 = randint(1, 9)
+        if alternative and alternative2:
+            return 0, 0
+        return easy, easy2
+
+    elif the_difficulty == 2:
+        average = randint(9, 15)
+        average2 = randint(9, 15)
+        if alternative and alternative2:
+            return 0, 0
+        return average, average2
+
+    elif the_difficulty == 3:
+        challenging = randint(15, 50)
+        challenging2 = randint(15, 50)
+        if alternative and alternative2:
+            return 0, 0
+        return challenging, challenging2
+
+    else:
+        insane = randint(100, 10_000)
+        insane2 = randint(100, 10_000)
+        if alternative and alternative2:
+            return 0, 0
+        return insane, insane2
+
+def calculus_printer(value_one: int = 1, value_two: int = 1, alternative_operator=True):
+    """"""
+    operators = ['+', '-', 'x']
+    if alternative_operator:
+        sample = '1 + 1?'
+        return sample
+    calculus = f'========== Quanto é {value_one} {choice(operators)} {value_two}? =========='
+    return calculus
+
+def operator_finder(text: str = '', alternative_operator=True):
+    """"""
+    operators = ['+', '-', 'x', '/']
+    box = []
+
+    if alternative_operator:
+        operator_found = '**'
+        return operator_found
+
+    for obj in operators:
+        box.append(obj in text)
+        if True in box:
+            break
+    operator_found = operators[box.index(True)]
+
+    return operator_found
+
+def math_maker(value_one: int = 1, value_two: int = 1, the_operator: str = ''):
+    """"""
+    calculus_table = ((value_one + value_two), (value_one - value_two), (value_one * value_two))
+
+    if the_operator == '+':
+        return calculus_table[0]
+    elif the_operator == '-':
+        return calculus_table[1]
+    elif the_operator == 'x':
+        return calculus_table[2]
+    else:
+        return None
+
+def tell_if_this_basic_math_true(value_one: int = 1, value_two: int = 1, the_operator: str = '', the_result: int = 0):
+    """"""
+    if the_operator == '+':
+        return (value_one + value_two) == the_result
+    elif the_operator == '-':
+        return (value_one - value_two) == the_result
+    elif the_operator == 'x':
+        return (value_one * value_two) == the_result
+    else:
+        return None
+
+def true_counter(the_comparison):
+    """"""
+    counter = 0
+
+    if the_comparison:
+        counter += 1
+        return counter
+
+    counter = 0
+    return counter
+
+def message_frame(the_message: str = f'----- MENSAGEM -----') -> str:
+    """"""
+    return the_message
 
 if __name__ == '__main__':
     pass
