@@ -104,7 +104,7 @@ def find_sign(birthday: str = 'Absent', existence: str = 'Absent', existing_sign
             counter += 1
     counter = 0
 
-def get_input_integer(the_input: int, input_text: str = 'Write an integer -> ', initial_target: int = 1, ending_target: int = 9999) -> int:
+def get_input_integer(the_input: int = 1, input_text: str = 'Write an integer -> ', initial_target: int = 1, ending_target: int = 9999) -> int:
     """
     To treat improper data while a proper integer number is not being provided.
     :param the_input:
@@ -134,7 +134,7 @@ def get_input_integer(the_input: int, input_text: str = 'Write an integer -> ', 
 
     return the_input
 
-def instructions(content: str) -> str:
+def instructions(content: str = 'Indefinido') -> str:
     """
     To inform procedures of an algorithm.
     :param content:
@@ -142,7 +142,7 @@ def instructions(content: str) -> str:
     """
     return content
 
-def input_printer(message: str = 'Press any key in order to continue...') -> input:
+def input_printer(message: str = 'Press any key...') -> input:
     """
     To return an input with a message of instruction, and to control code rolling, if there is/are other inputs
     :param message:
@@ -177,7 +177,7 @@ def step_painter(*args, prefix=0, prefix2=7) -> tuple:
         '\033[1:30m', '\033[1:31m', '\033[1:32m', '\033[1:33m', '\033[1:34m', '\033[1:35m', '\033[1:36m', '\033[m'
     )
 
-    steps = tuple([f'\n{pallet[prefix]}{step}{pallet[prefix2]}\n' for step in args])
+    steps = [f'\n{pallet[prefix]}{step}{pallet[prefix2]}\n' for step in args]
 
     return tuple(steps)
 
@@ -295,4 +295,6 @@ def message_frame(the_message: str = f'----- MENSAGEM -----') -> str:
     return the_message
 
 if __name__ == '__main__':
+    print(welcome())
+    print(welcome('Name of the algorithm'))
     pass
