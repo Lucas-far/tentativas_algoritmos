@@ -9,6 +9,7 @@ the_breaking_point: tuple = ('n',)
 click_arrow: str = 'Click after the arrow below'
 hit_enter: str = 'Press ENTER key'
 the_closure: str = f'{colors[1]}\nAlgorithm has been shut down{colors[7]}'
+to_proceed: str = 'Press any key in order to continue...'
 
 # def error_input_floating_out_of_range(first_value: float = 0.0, last_value: float = 0.0):
 #     print(f"\n{announcement}\nThe provided input is not in the suitable range: {first_value} to {last_value}")

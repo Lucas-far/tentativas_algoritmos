@@ -4,7 +4,7 @@ from unittest import TestCase
 
 from methods_database import (
     calculate_lifetime, customize_birthday, customize_birthday_str, find_sign, get_input_integer, instructions,
-    input_printer, should_algorithm_run, step_painter, welcome
+    should_algorithm_run, step_painter, welcome
 )
 
 "Run all tests at once"  # python -m unittest discover tests
@@ -67,16 +67,6 @@ class TestInstructions(TestCase):
     def test_instructions(self) -> None:
         self.assertEqual(instructions('Indefinido'), self.test_var)
         self.assertNotEqual(instructions('Procedures'), self.test_var)
-
-class TestInputPrinter(TestCase):
-    def setUp(self) -> None:
-        self.test_var = input_printer()                     # Press any key...
-        self.test_var2 = input_printer('Press any key...')  # Press any key...
-        self.test_var3 = 'ok'                               # ok
-
-    def test_input_printer(self) -> None:
-        self.assertEqual(self.test_var, self.test_var2)
-        self.assertNotEqual(self.test_var2, self.test_var3)
 
 class TestShouldAlgorithmRun(TestCase):
     def setUp(self) -> None:

@@ -6,7 +6,7 @@ from methods_database import (
 )
 
 from widgets import (
-    click_arrow, colors, hit_enter, the_breaking_point, the_closure
+    click_arrow, colors, hit_enter, the_breaking_point, the_closure, to_proceed
 )
 
 # input values are set to the minimum value possible for their purpose
@@ -49,7 +49,7 @@ while True:
     ))
 
     # content controller -----------------------------------------------------------------------------------------------
-    input_printer()
+    input(to_proceed)
 
     # integer input to collect math difficulty -------------------------------------------------------------------------
     print(steps[2])

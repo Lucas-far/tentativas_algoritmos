@@ -2,11 +2,11 @@
 
 from methods_database import (
     calculate_lifetime, customize_birthday, customize_birthday_str,  find_sign, get_input_integer,
-    input_printer, instructions, should_algorithm_run, welcome, step_painter
+    instructions, should_algorithm_run, welcome, step_painter
 )
 
 from widgets import (
-    click_arrow, colors, hit_enter, the_breaking_point, the_closure
+    click_arrow, colors, hit_enter, the_breaking_point, the_closure, to_proceed
 )
 
 input_exec: str = ''
@@ -15,15 +15,8 @@ input_birth_month: int = 1
 input_birth_year: int = 1
 
 steps = step_painter(
-        '',
-        '1 - Should algorithm run?',
-        '2 - Display of instructions',
-        '3 - Provide input: birth day',
-        '4 - Provide input: birth month',
-        '5 - Provide input: birth year',
-        prefix=3,
-        prefix2=7
-    )
+        '', '1 - Should algorithm run?', '2 - Display of instructions', '3 - Provide input: birth day',
+        '4 - Provide input: birth month', '5 - Provide input: birth year', prefix=3, prefix2=7)
 
 def start():
     """"""
@@ -51,7 +44,7 @@ while True:
         """
     ))
 
-    input_printer()
+    input(to_proceed)
 
     input_birth_day = get_input_integer(
         the_input=input_birth_day,

@@ -148,7 +148,7 @@ def input_printer(message: str = 'Press any key...') -> input:
     :param message:
     :return:
     """
-    return input(message)
+    input(message)
 
 def should_algorithm_run() -> str:
     """
@@ -295,6 +295,7 @@ def message_frame(the_message: str = f'----- MENSAGEM -----') -> str:
     return the_message
 
 if __name__ == '__main__':
-    print(welcome())
-    print(welcome('Name of the algorithm'))
+    var = input_printer()
+    var2 = input_printer('mensagem')
+    print(var == var2)
     pass
