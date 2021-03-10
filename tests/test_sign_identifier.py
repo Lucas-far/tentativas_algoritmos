@@ -2,7 +2,7 @@
 
 from unittest import TestCase
 
-from methods_database import (
+from utils.methods_database import (
     calculate_lifetime, customize_birthday, customize_birthday_str, find_sign, get_input_integer, instructions,
     should_algorithm_run, step_painter, welcome
 )

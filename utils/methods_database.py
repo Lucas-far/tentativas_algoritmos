@@ -295,7 +295,6 @@ def message_frame(the_message: str = f'----- MENSAGEM -----') -> str:
     return the_message
 
 if __name__ == '__main__':
-    var = input_printer()
-    var2 = input_printer('mensagem')
-    print(var == var2)
+    var = calculate_lifetime()
+    print(var)
     pass

@@ -1,11 +1,11 @@
 
 
-from methods_database import (
+from utils.methods_database import (
     calculate_lifetime, customize_birthday, customize_birthday_str,  find_sign, get_input_integer,
     instructions, should_algorithm_run, welcome, step_painter
 )
 
-from widgets import (
+from utils.widgets import (
     click_arrow, colors, hit_enter, the_breaking_point, the_closure, to_proceed
 )
 

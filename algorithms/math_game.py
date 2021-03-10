@@ -1,11 +1,11 @@
 
 
-from methods_database import (
+from utils.methods_database import (
     get_input_integer, input_printer, instructions, welcome, step_painter, number_maker_by_difficulty, calculus_printer,
     operator_finder, math_maker, tell_if_this_basic_math_true, message_frame
 )
 
-from widgets import (
+from utils.widgets import (
     click_arrow, colors, hit_enter, the_breaking_point, the_closure, to_proceed
 )
 

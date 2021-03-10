@@ -11,7 +11,7 @@ Methods used on the algorithm, which have already been tested
 """
 
 from unittest import TestCase
-from methods_database import (
+from utils.methods_database import (
     number_maker_by_difficulty, calculus_printer, operator_finder, math_maker, tell_if_this_basic_math_true,
     message_frame
 )
