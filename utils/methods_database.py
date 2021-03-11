@@ -14,14 +14,17 @@ def calculate_lifetime(year: int = 1, month: int = 1, day: int = 1) -> str:
     """
     today = datetime.today()
 
+    # the_birthday = datetime(year=1992, month=7, day=16)
     the_birthday = datetime(year=year, month=month, day=day)
-    the_existence_calculus = today - the_birthday
-    the_result = f'About {str(the_existence_calculus).split()[0]} days'
 
-    "Example"  # the_existence_calculus = 2020/07/08 - 1992/7/16 = 10219 days, 23:33:12.115426
-    "Example"  # result = About 10219 days
+    # the_existence_calculus = 2020/07/08 - 1992/7/16 ... 10219 days, 23:33:12.115426
+    the_existence_calculus = today - the_birthday
+
+    # the_result = About 10464 days
+    the_result = f"About {str(the_existence_calculus).split(',')[0]} days"
 
     return the_result
+
 
 def customize_birthday(year: int = 1, month: int = 1, day: int = 1) -> datetime:
     """
@@ -36,6 +39,7 @@ def customize_birthday(year: int = 1, month: int = 1, day: int = 1) -> datetime:
 
     return the_birthday
 
+
 def customize_birthday_str(year: int = 1, month: int = 1, day: int = 1) -> str:
     """
     To build an american date pattern through integers
@@ -46,6 +50,7 @@ def customize_birthday_str(year: int = 1, month: int = 1, day: int = 1) -> str:
     """
     the_result = f'{year}/{month}/{day}'
     return the_result
+
 
 def find_sign(birthday: str = 'Absent', existence: str = 'Absent', existing_signs: int = 12, day: int = 1, month: int = 1) -> str:
     """
@@ -104,6 +109,7 @@ def find_sign(birthday: str = 'Absent', existence: str = 'Absent', existing_sign
             counter += 1
     counter = 0
 
+
 def get_input_integer(the_input: int = 1, input_text: str = 'Write an integer -> ', initial_target: int = 1, ending_target: int = 9999) -> int:
     """
     To treat improper data while a proper integer number is not being provided.
@@ -134,6 +140,7 @@ def get_input_integer(the_input: int = 1, input_text: str = 'Write an integer ->
 
     return the_input
 
+
 def instructions(content: str = 'Indefinido') -> str:
     """
     To inform procedures of an algorithm.
@@ -142,6 +149,7 @@ def instructions(content: str = 'Indefinido') -> str:
     """
     return content
 
+
 def input_printer(message: str = 'Press any key...') -> input:
     """
     To return an input with a message of instruction, and to control code rolling, if there is/are other inputs
@@ -149,6 +157,7 @@ def input_printer(message: str = 'Press any key...') -> input:
     :return:
     """
     input(message)
+
 
 def should_algorithm_run() -> str:
     """
@@ -165,6 +174,7 @@ def should_algorithm_run() -> str:
 
     return text
 
+
 def step_painter(*args, prefix=0, prefix2=7) -> tuple:
     """
     To store texts into a tuple and alter the standard color of the IDE
@@ -180,6 +190,7 @@ def step_painter(*args, prefix=0, prefix2=7) -> tuple:
     steps = [f'\n{pallet[prefix]}{step}{pallet[prefix2]}\n' for step in args]
 
     return tuple(steps)
+
 
 def welcome(algorithm_name: str = 'Name of the algorithm', prefix: int = 0, prefix2: int = 7) -> str:
     """
@@ -229,6 +240,7 @@ def number_maker_by_difficulty(the_difficulty: int = 1, alternative=True, altern
             return 0, 0
         return insane, insane2
 
+
 def calculus_printer(value_one: int = 1, value_two: int = 1, alternative_operator=True):
     """"""
     operators = ['+', '-', 'x']
@@ -237,6 +249,7 @@ def calculus_printer(value_one: int = 1, value_two: int = 1, alternative_operato
         return sample
     calculus = f'========== Quanto é {value_one} {choice(operators)} {value_two}? =========='
     return calculus
+
 
 def operator_finder(text: str = '', alternative_operator=True):
     """"""
@@ -255,6 +268,7 @@ def operator_finder(text: str = '', alternative_operator=True):
 
     return operator_found
 
+
 def math_maker(value_one: int = 1, value_two: int = 1, the_operator: str = ''):
     """"""
     calculus_table = ((value_one + value_two), (value_one - value_two), (value_one * value_two))
@@ -268,6 +282,7 @@ def math_maker(value_one: int = 1, value_two: int = 1, the_operator: str = ''):
     else:
         return None
 
+
 def tell_if_this_basic_math_true(value_one: int = 1, value_two: int = 1, the_operator: str = '', the_result: int = 0):
     """"""
     if the_operator == '+':
@@ -278,6 +293,7 @@ def tell_if_this_basic_math_true(value_one: int = 1, value_two: int = 1, the_ope
         return (value_one * value_two) == the_result
     else:
         return None
+
 
 def true_counter(the_comparison):
     """"""
@@ -290,9 +306,11 @@ def true_counter(the_comparison):
     counter = 0
     return counter
 
+
 def message_frame(the_message: str = f'----- MENSAGEM -----') -> str:
     """"""
     return the_message
+
 
 if __name__ == '__main__':
     var = calculate_lifetime()
